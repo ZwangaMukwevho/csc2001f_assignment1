@@ -8,7 +8,8 @@ public static void main(String[] args)
   { 
     //DataCollection("sample.txt");
     //BinarySearchTree<String> BSTobj = new BinarySearchTree<String>();
-    //DataCollection1("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt",BSTobj);
+    //DataCollection1("output.txt",BSTobj); 
+    //printAreas1("1","1","00");
  
   } 
 
@@ -42,12 +43,7 @@ public static void main(String[] args)
 	String key = a + "_"+b+"_"+c;
 	BinarySearchTree<String> BSTobj = new BinarySearchTree<String>();
         DataCollection1("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt",BSTobj);
-	if (BSTobj.find(key) != null){
-	   BSTobj.visit(BSTobj.find(key));
-		}
-	else{
-	System.out.println("No matches found");}
-	
+	BSTobj.visit(BSTobj.find(key));
 	
 	return BSTobj.countOps();		
 	}
@@ -69,7 +65,7 @@ public static void main(String[] args)
 	// Output
 	int[] keyArr = new int[2];
 		keyArr[0] = BSTobj.countOps();		
-		keyArr[1] = BSTobj.inCount();		
+		keyArr[1] = BSTobj.SearchCount();		
 	
 	return keyArr;		
 	}

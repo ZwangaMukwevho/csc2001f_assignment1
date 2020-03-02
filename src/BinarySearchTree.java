@@ -25,6 +25,7 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
       }
       else
       {
+	insertCount = insertCount + 1;
          if (node.right == null)
             node.right = new BinaryTreeNode<dataType> (d,e, null, null);
          else
@@ -44,6 +45,7 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
       if (e.compareTo (node.data1) == 0){
 	 count = count +1;
          return node;}
+	
       else if (e.compareTo (node.data1) < 0){
          count = count + 1;
          return (node.left == null) ? null : find (e, node.left);
@@ -55,7 +57,7 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
    }
    public int countOps(){
 	return count;}
-   public int inCount(){
+   public int SearchCount(){
 	return insertCount;}
    public void delete ( dataType d )
    {
