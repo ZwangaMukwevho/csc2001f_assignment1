@@ -9,7 +9,7 @@ public class LSArray
                         throws FileNotFoundException 
   { 
     //DataCollection("sample.txt");
-    keys(DataCollection("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt"));
+    //keys(DataCollection("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt"));
  
   } 
 
@@ -37,7 +37,7 @@ public class LSArray
 	return data;
  	}
 
-	public static String[] keys(String [] Arr)
+	public static String[] keys(String [] Arr) 
 	{
 	int size = Arr.length;
 	String[] keyArr = new String[size];
