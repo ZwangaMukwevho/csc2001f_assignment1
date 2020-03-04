@@ -3,7 +3,18 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.PrintWriter;  
 
+/** 
+        * This class is used to run automate the running of part 1 and part 4 for different time intervals
+	* It is run through a python script called python.py
+	*@aurthor Zwanga Mukwevho
+        */
+
 public class part5{
+/** 
+        * This method uses BSTdata objects and the learn object for comparisons of the BST and linear array
+        * It writes out the comparisons done over a certain interal into a text file
+	*@return void
+        */
 public static void main(String[] args) 
                         throws FileNotFoundException, Exception 
   { 
@@ -45,9 +56,7 @@ public static void main(String[] args)
 	}
      writer.close();
 
-    //DataCollection("sample.txt");
-    //BinarySearchTree<String> BSTobj = new BinarySearchTree<String>();
-    //DataCollection1("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt",BSTobj);
+    
  
   } 
 

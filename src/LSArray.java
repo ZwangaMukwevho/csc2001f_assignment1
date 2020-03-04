@@ -2,17 +2,19 @@ import java.io.File;
 import java.io.FileNotFoundException; 
 import java.util.Scanner; 
 import java.util.Arrays;
-  
+ /** 
+        * This class reads in data from the textfile that inludes loadshedding schedules and stores each line in array 
+        * It also stores the keys seperately in each line  
+        * The text in each file is read in using the scanner class by using Scanner class.  
+        * @aurthor: Zwanga
+        */
 public class LSArray 
 { 
-  public static void main(String[] args) 
-                        throws FileNotFoundException 
-  { 
-    //DataCollection("sample.txt");
-    //keys(DataCollection("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt"));
- 
-  } 
-
+        /** 
+	*It then reads each line in the text file and store each line in an array
+	*@param This methed takes in a file name as its parameter
+	*@return an the array that stores the text file lines
+	*/
 	public static String[] DataCollection(String a) throws FileNotFoundException {
 	File file = new File(a); 
  	Scanner sc = new Scanner(file); 
@@ -21,7 +23,7 @@ public class LSArray
 	int counter = 0;
 
 	
-
+        
 	String[] data = new String[2976];
         // While loop to take in data from text file 
 	while(sc.hasNextLine())
@@ -36,6 +38,12 @@ public class LSArray
 	}
 	return data;
  	}
+	
+	/** 
+	*@param methed takes in an Array of text line
+	*The each item in the array, an take the first word contained in that item and stores it a new array of keys.
+	*@returns an array of keys
+	*/
 
 	public static String[] keys(String [] Arr) 
 	{

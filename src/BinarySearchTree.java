@@ -7,29 +7,32 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
 	int count = 0;
 	int insertCount= 0;
    public void insert ( dataType d,dataType e )
-   {
+   {  
       if (root == null)
          root = new BinaryTreeNode<dataType> (d,e, null, null);
       else
          insert (d,e, root);
    }
    public void insert ( dataType d, dataType e,BinaryTreeNode<dataType> node )
-   {
+   {	
+	insertCount = insertCount + 1;
       if (d.compareTo (node.data) <= 0)
-      { insertCount = insertCount + 1;
-	
-         if (node.left == null)
+      { 
+         if (node.left == null){
+		
             node.left = new BinaryTreeNode<dataType> (d, e,null, null);
-         else
-            insert (d, e,node.left);
+				}
+         else{
+            insert (d, e,node.left);}
       }
       else
       {
-	insertCount = insertCount + 1;
-         if (node.right == null)
+	
+         if (node.right == null){
             node.right = new BinaryTreeNode<dataType> (d,e, null, null);
-         else
-            insert (d, e,node.right);
+	}
+         else{
+            insert (d, e,node.right);}
       }
    }
    
@@ -41,17 +44,17 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
          return find (e, root);
    }
    public BinaryTreeNode<dataType> find ( dataType e, BinaryTreeNode<dataType> node )
-   {
+   {  count = count +1;
       if (e.compareTo (node.data1) == 0){
-	 count = count +1;
          return node;}
-	
+
+      
       else if (e.compareTo (node.data1) < 0){
-         count = count + 1;
+	count = count + 1;
          return (node.left == null) ? null : find (e, node.left);
          	}
       else{
-	count = count +1;
+	count = count + 1;
          return (node.right == null) ? null : find (e, node.right);
 		}
    }
