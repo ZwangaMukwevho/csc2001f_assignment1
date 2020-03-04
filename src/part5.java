@@ -45,7 +45,8 @@ public static void main(String[] args)
 	
 	
 	int[] CountArr = new int[2];
-	CountArr = BSTdata.printAreas2(tempArr[0], args[0]);
+	CountArr = BSTdata.printAreas1(tempArr[0], args[0]);
+	
 	count = learn.printA(tempArr[0],args[0]);
 	
         Outputline = String.format("%15d %15d %15d %15d \r\n", CountArr[0], CountArr[1], count, 0);	
