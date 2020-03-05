@@ -46,7 +46,7 @@ public class BSTdata{
 	*@param Strings which represent a key that is to be searched for in an array
 	*@return the number of comparisons made when searching and print out the item if it was found in an the array of interest
 	*/
-	public static int printAreas1(String a, String b, String c) throws FileNotFoundException
+	public static int printAreas1(String a, String b, String c)  throws FileNotFoundException
 	{
 	String check = "false";
 	String key = a + "_"+b+"_"+c;
@@ -54,7 +54,6 @@ public class BSTdata{
         DataCollection1("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt",BSTobj);
 	
 	try{
- 	  
 	String value = BSTobj.find(key).data;
 	System.out.format("match found was %s ",value);
 	System.out.println("Which means: ");
@@ -65,11 +64,13 @@ public class BSTdata{
 	    }
 	catch(NullPointerException e) 
         { 
-           System.out.format("No matches found for %s", key);
-        } 	
+	   System.out.format("no match was found for: %s",key);
+	System.out.println("");
+	   System.out.format("Number of insert comparisons is %d", BSTobj.SearchCount());
+           int i = 0;
+        } 			
 	
-	BSTobj.find(key);
-	return BSTobj.countOps();		
+	return BSTobj.countOps();			
 	}
 
 	/** 
@@ -80,7 +81,9 @@ public class BSTdata{
 	{
 	BinarySearchTree<String> BSTobj = new BinarySearchTree<String>();
         DataCollection1("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt",BSTobj);
-	BSTobj.inOrder ();		
+	BSTobj.inOrder ();
+	System.out.format("Number of insert comparisons is %d", BSTobj.SearchCount());
+			
 	}
 
 	 /** 

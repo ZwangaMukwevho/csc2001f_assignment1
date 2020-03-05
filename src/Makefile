@@ -3,17 +3,19 @@
 # 27 March 2017
 
 JAVAC=/usr/bin/javac
-
+SRCDIR=src
+BINDIR=bin
 .SUFFIXES: .java .class
 
 .java.class:
 	$(JAVAC) $<
 
-classes: BinaryTreeNode.class BinaryTree.class \
+CLASSES: BinaryTreeNode.class BinaryTree.class \
          BTQueueNode.class BTQueue.class \
-         BinarySearchTree.class BinarySearchTreeTest.class
+         BinarySearchTree.class 
+CLASS_FILES=$(CLASSES:%.class=$(BINDIR)/%.class)
 
-default: $(CLASSES)
+default: $(CLASS_FILES)
 
 clean:
 	rm *.class

@@ -43,7 +43,8 @@ public class loadshedData
 					}
 			   	   };
 	if(check.equals("True")){
-		System.out.format("no matches found for %s",key);}
+		System.out.format("no matches found for %s",key);
+		System.out.println("Number of insert comparisons is 0");}
 	return opCount;	
 			
 	}
@@ -61,6 +62,8 @@ public class loadshedData
 	for(int i = 0;i < size;i++){
 		System.out.println(LSdata[i]);	
 			   	   };
+	System.out.println("");
+	System.out.println("Number of insert comparisons is 0");
 		
 	}
 	
